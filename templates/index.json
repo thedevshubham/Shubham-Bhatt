@@ -6,34 +6,42 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "banner_section": {
       "type": "banner",
-      "blocks": {},
-      "block_order": [],
       "name": "Banner",
       "settings": {
-        "announcement_text": "<p>Discover our latest arrivals and curated essentials.</p>",
-        "header_cta_text": "Choose Gift",
-        "header_cta_link": "shopify://collections/all",
-        "banner_title": "The Gift Guide",
-        "banner_text": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
-        "banner_cta_text": "Shop Now",
-        "banner_cta_link": "shopify://collections/all",
-        "banner_image": "",
-        "message_label": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL",
+        "logo": "shopify://shop_images/Group_1000007777.jpg",
+        "banner_image": "shopify://shop_images/Frame.svg",
+        "heading": "Welcome to our store",
+        "text": "<p>Discover our latest arrivals and curated essentials.</p>",
+        "button_label": "Shop now",
+        "button_link": "shopify://collections",
+        "background_color": "#f7f3eb",
+        "text_color": "#111111",
+        "padding_block_start": 32,
+        "padding_block_end": 32,
+        "hero_heading": "",
+        "hero_text": "",
+        "hero_button_label": "",
+        "hero_button_link": ""
       }
     },
     "grid_section": {
       "type": "grid",
-      "blocks": {},
-      "block_order": [],
       "name": "Grid",
       "settings": {
-        "heading": "Tisso vison in the wild"
+        "heading": "Tisso vison in the wild",
+        "text": "<p>Browse featured categories with a quick, modern layout.</p>",
+        "columns": 3,
+        "button_label": "View more",
+        "button_link": "",
+        "padding_block_start": 32,
+        "padding_block_end": 32
       }
-    },
+    }
   },
   "order": [
     "banner_section",
