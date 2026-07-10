@@ -1,6 +1,5 @@
 <article class="product-card">
-
-  <a href="{{ product.url }}" class="product-card__image-link">
+  <button class="product-card__image-link js-product-card" data-product-handle="{{ product.handle }}">
     {% if product.featured_image %}
       {{
         product.featured_image
@@ -10,5 +9,5 @@
           class: 'product-card__image'
       }}
     {% endif %}
-  </a>
+  </button>
 </article>

@@ -1,0 +1,76 @@
+.quick-view {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    z-index: 999;
+}
+
+.quick-view.is-active {
+
+    display: block;
+}
+
+.quick-view__overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.45);
+}
+
+.quick-view__dialog {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+
+    width: 900px;
+
+    max-width: 95vw;
+
+    background: white;
+
+    padding: 40px;
+}
+
+.quick-product{
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:40px;
+}
+
+.quick-product img{
+
+    width:100%;
+
+    display:block;
+}
+
+.quick-view__close{
+
+    position:absolute;
+
+    right:20px;
+
+    top:20px;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:30px;
+}
