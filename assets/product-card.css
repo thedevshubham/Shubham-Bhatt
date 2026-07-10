@@ -1,0 +1,19 @@
+.product-card {
+  width: 100%;
+  max-width: 433px;
+  aspect-ratio: 433 / 444;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card__image-link,
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.product-card__image {
+  object-fit: cover;
+}

@@ -1,0 +1,14 @@
+<article class="product-card">
+
+  <a href="{{ product.url }}" class="product-card__image-link">
+    {% if product.featured_image %}
+      {{
+        product.featured_image
+        | image_url: width: 600
+        | image_tag:
+          loading: 'lazy',
+          class: 'product-card__image'
+      }}
+    {% endif %}
+  </a>
+</article>
