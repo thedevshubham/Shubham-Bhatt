@@ -1,5 +1,9 @@
 
-{% render 'button', link: block.settings.link %}
+{% render 'button',
+  label: block.settings.label,
+  link: block.settings.link,
+  class: block.settings.style_class
+%}
 
 {% schema %}
 {

@@ -13,9 +13,7 @@
   background-color: #f5f5f5;
   gap: 24px;
 
-  position: absolute;
-    width: 100%;
-    z-index: 2;
+width: 100%;
 }
 
 .banner-section__logo-wrap {
@@ -29,18 +27,11 @@
 }
 
 .banner-section__button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #111111;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background 0.3s ease;
+    width: 207px;
 }
 
 .banner-section__button:hover {
-  background: #333333;
+  /* background: #333333; */
 }
 
 .banner-section__main {
@@ -122,8 +113,8 @@
 }
 
 .banner-section__hero-button:hover {
-  background: #333333;
-  transform: translateX(4px);
+  /* background: #333333;
+  transform: translateX(4px); */
 }
 
 .banner-section__hero-placeholder {
@@ -135,6 +126,20 @@
   background: #f5f5f5;
   color: #999999;
   text-align: center;
+}
+
+.banner-section__message {
+    background: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    line-height: 14px;
+}
+
+.banner-section__message > p {
+    padding: 0;
+    margin: 0;
 }
 
 /* Responsive design */

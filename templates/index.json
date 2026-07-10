@@ -13,26 +13,14 @@
       "blocks": {},
       "block_order": [],
       "name": "Banner",
-      "settings": {
-        "announcement_text": "<p>Discover our latest arrivals and curated essentials.</p>",
-        "header_cta_text": "Choose Gift",
-        "header_cta_link": "shopify://collections/all",
-        "banner_title": "The Gift Guide",
-        "banner_text": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
-        "banner_cta_text": "Shop Now",
-        "banner_cta_link": "shopify://collections/all",
-        "banner_image": "",
-        "message_label": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL",
-      }
+      "settings": {}
     },
     "grid_section": {
       "type": "grid",
       "blocks": {},
       "block_order": [],
       "name": "Grid",
-      "settings": {
-        "heading": "Tisso vison in the wild"
-      }
+      "settings": {}
     },
   },
   "order": [

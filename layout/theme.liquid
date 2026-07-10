@@ -24,21 +24,11 @@
       >
     {% endif %}
 
-    {% comment %} {%- render 'meta-tags' -%}
-    {%- render 'stylesheets' -%}
-    {%- render 'fonts' -%}
-    {%- render 'scripts' -%}
-    {%- render 'theme-styles-variables' -%}
-    {%- render 'color-palette' -%} {% endcomment %}
-
-    {% comment %} {% if request.design_mode %}
-      {%- render 'theme-editor' -%}
-    {% endif %} {% endcomment %}
-
     {% comment %} Stylings here {% endcomment %}
     <link rel="stylesheet" href="{{ 'main.css' | asset_url }}" />
     <link rel="stylesheet" href="{{ 'banner.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'banner-hero.css' | asset_url }}" />
+    <link rel="stylesheet" href="{{ 'banner-with-image.css' | asset_url }}" />
+    <script src="{{ 'main.js' | asset_url }}" defer></script>
 
     {{ content_for_header }}
   </head>

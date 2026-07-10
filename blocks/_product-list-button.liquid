@@ -4,7 +4,11 @@
 {% assign button_url = button_collection.url %}
 
 {% if button_collection.products_count > section.settings.max_products %}
-  {% render 'button', link: button_url %}
+  {% render 'button',
+    label: block.settings.label,
+    link: button_url,
+    class: block.settings.style_class
+  %}
 {% endif %}
 
 {% schema %}

@@ -58,33 +58,4 @@
 }
 {% endschema %}
 
-<section
-  class="grid-section"
-  style="--grid-columns: {{ section.settings.columns }}; --grid-padding-top: {{ section.settings.padding_block_start }}px; --grid-padding-bottom: {{ section.settings.padding_block_end }}px;"
->
-  <div class="grid-section__inner">
-    {% if section.settings.heading != blank %}
-      <h2 class="grid-section__title">{{ section.settings.heading }}</h2>
-    {% endif %}
-    {% if section.settings.text != blank %}
-      <div class="grid-section__text">{{ section.settings.text }}</div>
-    {% endif %}
 
-    <div class="grid-section__grid">
-      {% for i in (1..3) %}
-        <div class="grid-section__card">
-          <strong>Category {{ i }}</strong>
-          <p>Add your content here.</p>
-        </div>
-      {% endfor %}
-    </div>
-
-    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-      <div class="grid-section__button-wrap">
-        <a href="{{ section.settings.button_link }}" class="grid-section__button">
-          {{ section.settings.button_label }}
-        </a>
-      </div>
-    {% endif %}
-  </div>
-</section>
