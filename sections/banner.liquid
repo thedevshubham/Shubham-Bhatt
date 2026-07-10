@@ -10,132 +10,174 @@
       "label": "Logo"
     },
     {
-      "type": "image_picker",
-      "id": "banner_image",
-      "label": "Banner image"
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Welcome to our store"
-    },
-    {
       "type": "richtext",
-      "id": "text",
-      "label": "Text",
+      "id": "announcement_text",
+      "label": "Announcement text",
       "default": "<p>Discover our latest arrivals and curated essentials.</p>"
     },
     {
       "type": "text",
-      "id": "button_label",
-      "label": "Button label",
+      "id": "button_1",
+      "label": "Button 1 label",
+      "default": "Choose gift"
+    },
+    {
+      "type": "url",
+      "id": "button_1_link",
+      "label": "Button 1 link"
+    },
+    {
+      "type": "richtext",
+      "id": "message_text",
+      "label": "Message text",
+      "default": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_2",
+      "label": "Button 2 label",
       "default": "Shop now"
     },
     {
       "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    },
+      "id": "button_2_link",
+      "label": "Button 2 link"
+    }
+  ],
+  "blocks": [
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background color",
-      "default": "#f7f3eb"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "#111111"
-    },
-    {
-      "type": "range",
-      "id": "padding_block_start",
-      "label": "Top padding",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "padding_block_end",
-      "label": "Bottom padding",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "default": 32
-    },
-    {
-      "type": "header",
-      "content": "Hero overlay content"
-    },
-    {
-      "type": "text",
-      "id": "hero_heading",
-      "label": "Hero heading"
-    },
-    {
-      "type": "richtext",
-      "id": "hero_text",
-      "label": "Hero text"
-    },
-    {
-      "type": "text",
-      "id": "hero_button_label",
-      "label": "Hero button label"
-    },
-    {
-      "type": "url",
-      "id": "hero_button_link",
-      "label": "Hero button link"
+      "type": "banner-with-image",
+      "name": "Banner with image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Banner title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "CTA button label"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "CTA button link"
+        },
+        {
+          "type": "header",
+          "content": "Content positioning"
+        },
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Position",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "bottom",
+              "label": "Bottom"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "bottom"
+        },
+        {
+          "type": "select",
+          "id": "position_type",
+          "label": "Position type",
+          "options": [
+            {
+              "value": "overlay",
+              "label": "Overlay (on top of image)"
+            },
+            {
+              "value": "side",
+              "label": "Side (parallel to image)"
+            }
+          ],
+          "default": "overlay"
+        },
+        {
+          "type": "header",
+          "content": "Mobile settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_mobile",
+          "label": "Mobile view",
+          "default": false
+        }
+      ]
     }
   ]
 }
 {% endschema %}
 
-<section
-  class="banner-section"
-  style="--banner-bg: {{ section.settings.background_color }}; --banner-text: {{ section.settings.text_color }}; --banner-padding-top: {{ section.settings.padding_block_start }}px; --banner-padding-bottom: {{ section.settings.padding_block_end }}px;"
->
-  <div class="banner-section__inner">
-    <div class="banner-section__header">
-      {% if section.settings.logo != blank %}
-        <div class="banner-section__logo-wrap">
-          <img
-            src="{{ section.settings.logo | image_url: width: 400 }}"
-            alt="{{ section.settings.logo.alt | default: shop.name }}"
-            class="banner-section__logo"
-          >
-        </div>
-      {% endif %}
-      {% if section.settings.text != blank %}
-        <div class="banner-section__text">{{ section.settings.text }}</div>
-      {% endif %}
-      {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-        <a href="{{ section.settings.button_link }}" class="banner-section__button">
-          {{ section.settings.button_label }}
-        </a>
-      {% endif %}
-    </div>
-
-    <div class="banner-section__main">
-      <!-- Image only banner -->
-      <div class="banner-section__mobile-banner">
-        {% render 'banner-hero', image: section.settings.banner_image %}
+<div class="banner-section">
+  <div class="banner-section__header">
+    {% if section.settings.logo != blank %}
+      <div class="banner-section__logo-wrap">
+        <img
+          src="{{ section.settings.logo | image_url: width: 400 }}"
+          alt="{{ section.settings.logo.alt | default: shop.name }}"
+          class="banner-section__logo"
+        >
       </div>
-
-      <!-- Image with text overlay and CTA -->
-      <div class="banner-section__desktop-banner">
-        {% render 'banner-hero',
-          image: section.settings.banner_image,
-          heading: section.settings.hero_heading,
-          text: section.settings.hero_text,
-          button_label: section.settings.hero_button_label,
-          button_url: section.settings.hero_button_link
-        %}
-      </div>
-    </div>
+    {% endif %}
+    {% if section.settings.announcement_text != blank %}
+      <div class="banner-section__announcement">{{ section.settings.announcement_text }}</div>
+    {% endif %}
+    {% if section.settings.button_1 != blank and section.settings.button_1_link != blank %}
+      {% render 'button',
+        label: section.settings.button_1,
+        url: section.settings.button_1_link,
+        class: 'banner-section__button button--yellow'
+      %}
+    {% endif %}
   </div>
-</section>
+
+  <div class="banner-section__banners">
+    {% for block in section.blocks %}
+      {% if block.type == 'banner-with-image' %}
+        {% render 'banner-with-image', block: block, section: section %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if section.settings.message_text != blank %}
+    <div class="banner-section__message">
+      {{ section.settings.message_text }}
+    </div>
+  {% endif %}
+  {% if section.settings.button_2 != blank and section.settings.button_2_link != blank %}
+    <a href="{{ section.settings.button_2_link }}" class="banner-section__footer-button">
+      {{ section.settings.button_2 }}
+    </a>
+  {% endif %}
+</div>

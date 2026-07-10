@@ -4,8 +4,19 @@ Usage:
 {% render 'button', label: 'Click me', url: '/path', class: 'custom-class' %}
 {% endcomment %}
 
-{% if label != blank and url != blank %}
-  <a href="{{ url }}" class="button {{ class }}">
-    {{ label }}
-  </a>
+{% liquid
+  assign button_url = url | default: link
+%}
+
+{% if label != blank %}
+  <button
+    type="button"
+    class="button{% if class != blank %} {{ class }}{% endif %}"
+    {% if button_url != blank %}
+      data-button-url="{{ button_url | escape }}"
+    {% endif %}
+  >
+    <span class="button__label">{{ label }}</span>
+    <span class="button__arrow" aria-hidden="true"></span>
+  </button>
 {% endif %}

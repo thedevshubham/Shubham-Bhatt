@@ -1,0 +1,14 @@
+.product-grid {
+  padding: 90px 51.5px 51px 51.5px;
+}
+
+.product-grid__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-grid__title {
+    margin: 0;
+    padding-bottom: 30px;
+}

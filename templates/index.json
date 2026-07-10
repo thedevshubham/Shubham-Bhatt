@@ -12,36 +12,13 @@
     "banner_section": {
       "type": "banner",
       "name": "Banner",
-      "settings": {
-        "logo": "shopify://shop_images/Group_1000007777.jpg",
-        "banner_image": "shopify://shop_images/Frame.svg",
-        "heading": "Welcome to our store",
-        "text": "<p>Discover our latest arrivals and curated essentials.</p>",
-        "button_label": "Shop now",
-        "button_link": "shopify://collections",
-        "background_color": "#f7f3eb",
-        "text_color": "#111111",
-        "padding_block_start": 32,
-        "padding_block_end": 32,
-        "hero_heading": "",
-        "hero_text": "",
-        "hero_button_label": "",
-        "hero_button_link": ""
-      }
+      "settings": {}
     },
     "grid_section": {
       "type": "grid",
       "name": "Grid",
-      "settings": {
-        "heading": "Tisso vison in the wild",
-        "text": "<p>Browse featured categories with a quick, modern layout.</p>",
-        "columns": 3,
-        "button_label": "View more",
-        "button_link": "",
-        "padding_block_start": 32,
-        "padding_block_end": 32
-      }
-    }
+      "settings": {}
+    },
   },
   "order": [
     "banner_section",

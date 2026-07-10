@@ -1,90 +1,52 @@
 {% schema %}
 {
-  "name": "Grid",
-  "tag": "section",
-  "class": "grid-section",
+  "name": "Product Grid",
   "settings": [
     {
       "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Explore the collection"
-    },
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured Products"
+    }
+  ],
+  "blocks": [
     {
-      "type": "richtext",
-      "id": "text",
-      "label": "Text",
-      "default": "<p>Browse featured categories with a quick, modern layout.</p>"
-    },
+      "type": "product",
+      "name": "Grid Item",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
     {
-      "type": "range",
-      "id": "columns",
-      "label": "Columns",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button label",
-      "default": "View more"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button link"
-    },
-    {
-      "type": "range",
-      "id": "padding_block_start",
-      "label": "Top padding",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "default": 32
-    },
-    {
-      "type": "range",
-      "id": "padding_block_end",
-      "label": "Bottom padding",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "default": 32
+      "name": "Product Grid"
     }
   ]
 }
 {% endschema %}
 
-<section
-  class="grid-section"
-  style="--grid-columns: {{ section.settings.columns }}; --grid-padding-top: {{ section.settings.padding_block_start }}px; --grid-padding-bottom: {{ section.settings.padding_block_end }}px;"
->
-  <div class="grid-section__inner">
-    {% if section.settings.heading != blank %}
-      <h2 class="grid-section__title">{{ section.settings.heading }}</h2>
-    {% endif %}
-    {% if section.settings.text != blank %}
-      <div class="grid-section__text">{{ section.settings.text }}</div>
-    {% endif %}
+<section class="product-grid">
+  {% if section.settings.title != blank %}
+    <h2 class="product-grid__title">
+      {{ section.settings.title }}
+    </h2>
+  {% endif %}
 
-    <div class="grid-section__grid">
-      {% for i in (1..3) %}
-        <div class="grid-section__card">
-          <strong>Category {{ i }}</strong>
-          <p>Add your content here.</p>
-        </div>
-      {% endfor %}
-    </div>
+  <div class="product-grid__wrapper">
+    {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
 
-    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-      <div class="grid-section__button-wrap">
-        <a href="{{ section.settings.button_link }}" class="grid-section__button">
-          {{ section.settings.button_label }}
-        </a>
-      </div>
-    {% endif %}
+      {% if product %}
+        {% render 'product-card',
+          product: product
+        %}
+      {% endif %}
+    {% endfor %}
   </div>
 </section>
