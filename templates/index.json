@@ -6,19 +6,16 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "banner_section": {
       "type": "banner",
-      "blocks": {},
-      "block_order": [],
       "name": "Banner",
       "settings": {}
     },
     "grid_section": {
       "type": "grid",
-      "blocks": {},
-      "block_order": [],
       "name": "Grid",
       "settings": {}
     },
