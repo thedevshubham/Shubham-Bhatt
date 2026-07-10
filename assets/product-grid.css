@@ -11,4 +11,7 @@
 .product-grid__title {
     margin: 0;
     padding-bottom: 30px;
+    letter-spacing: 0;
+    font-size: 36px;
+    font-weight: 400;
 }

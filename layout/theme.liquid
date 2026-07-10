@@ -30,7 +30,8 @@
     <link rel="stylesheet" href="{{ 'banner-with-image.css' | asset_url }}" />
     <link rel="stylesheet" href="{{ 'product-grid.css' | asset_url }}" />
     <link rel="stylesheet" href="{{ 'product-card.css' | asset_url }}" />
-    
+    <link rel="stylesheet" href="{{ 'quick-view.css' | asset_url }}" />
+
     <script src="{{ 'main.js' | asset_url }}" defer></script>
 
     {{ content_for_header }}
@@ -49,5 +50,13 @@
         {{ content_for_layout }}
       </main>
     </div>
+
+    {{ 'quick-view.js' | asset_url | script_tag }}
+
+    <script>
+        window.ShopifyConfig = window.ShopifyConfig || {};
+        window.ShopifyConfig.giftWithPurchaseVariant =
+          {{ shop.metafields.custom.gift_with_purchase.value }};
+      </script>
   </body>
 </html>
