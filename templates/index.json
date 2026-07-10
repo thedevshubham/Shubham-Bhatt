@@ -16,7 +16,7 @@
           "type": "banner-with-image",
           "settings": {
             "image": "shopify://shop_images/banner1.jpg",
-            "title": "Banner title",
+            "title": "",
             "description": "",
             "cta_label": "",
             "cta_link": "",
