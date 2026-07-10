@@ -11,14 +11,88 @@
   "sections": {
     "banner_section": {
       "type": "banner",
+      "blocks": {
+        "banner_with_image_itaPtk": {
+          "type": "banner-with-image",
+          "settings": {
+            "image": "shopify://shop_images/banner1.jpg",
+            "title": "The Gift Guide",
+            "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+            "cta_label": "Shop Now",
+            "cta_link": "shopify://collections",
+            "position": "left",
+            "position_type": "side",
+            "is_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_image_itaPtk"
+      ],
       "name": "Banner",
-      "settings": {}
+      "settings": {
+        "logo": "shopify://shop_images/Group_1000007777.jpg",
+        "announcement_text": "<p>Discover our latest arrivals and curated essentials.</p>",
+        "button_1": "Choose gift",
+        "button_1_link": "shopify://collections",
+        "message_text": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>",
+        "button_2": "",
+        "button_2_link": ""
+      }
     },
     "grid_section": {
       "type": "grid",
+      "blocks": {
+        "product_Emd6pH": {
+          "type": "product",
+          "settings": {
+            "product": "black-leather-bag"
+          }
+        },
+        "product_7hwADh": {
+          "type": "product",
+          "settings": {
+            "product": "blue-silk-tuxedo"
+          }
+        },
+        "product_TgfKHn": {
+          "type": "product",
+          "settings": {
+            "product": "chequered-red-shirt"
+          }
+        },
+        "product_yyHC9C": {
+          "type": "product",
+          "settings": {
+            "product": "classic-leather-jacket"
+          }
+        },
+        "product_Qwf6cN": {
+          "type": "product",
+          "settings": {
+            "product": "classic-varsity-top"
+          }
+        },
+        "product_bLBBAh": {
+          "type": "product",
+          "settings": {
+            "product": "floral-white-top"
+          }
+        }
+      },
+      "block_order": [
+        "product_Emd6pH",
+        "product_7hwADh",
+        "product_TgfKHn",
+        "product_yyHC9C",
+        "product_Qwf6cN",
+        "product_bLBBAh"
+      ],
       "name": "Grid",
-      "settings": {}
-    },
+      "settings": {
+        "title": "Tisso vison in the wild"
+      }
+    }
   },
   "order": [
     "banner_section",
