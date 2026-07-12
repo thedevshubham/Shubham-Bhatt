@@ -141,10 +141,24 @@
 
 <div class="banner-section">
   <div class="banner-section__header">
+    <button
+      type="button"
+      class="banner-section__menu-toggle"
+      aria-label="Open menu"
+    >
+        <span class="menu-icon">
+            {% render 'icons', icon: 'menu' %}
+        </span>
+
+      <span class="close-icon">
+          {% render 'icons', icon: 'mobile-menu-close' %}
+      </span>
+    </button>
+
     {% if section.settings.logo != blank %}
       <div class="banner-section__logo-wrap">
         <img
-          src="{{ section.settings.logo | image_url: width: 400 }}"
+          src="{{ section.settings.logo | image_url: width: 806 }}"
           alt="{{ section.settings.logo.alt | default: shop.name }}"
           class="banner-section__logo"
         >
@@ -181,3 +195,6 @@
     </a>
   {% endif %}
 </div>
+
+{% render 'mobile-menu', section: section %}
+

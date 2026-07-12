@@ -6,6 +6,8 @@
   lang="{{ request.locale.iso_code }}"
 >
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {%- if settings.favicon != blank -%}
       <link
         rel="icon"
@@ -33,6 +35,7 @@
     <link rel="stylesheet" href="{{ 'quick-view.css' | asset_url }}" />
     <link rel="stylesheet" href="{{ 'color-option-selector.css' | asset_url }}" />
     <link rel="stylesheet" href="{{ 'select.css' | asset_url }}" />
+    <link rel="stylesheet" href="{{ 'mobile-menu.css' | asset_url }}" />
 
     <script src="{{ 'main.js' | asset_url }}" defer></script>
 
