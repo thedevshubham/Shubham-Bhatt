@@ -1,3 +1,7 @@
+.banner-section {
+  position: relative;
+}
+
 .banner-section__inner {
   display: flex;
   flex-direction: column;
@@ -21,8 +25,8 @@ width: 100%;
 }
 
 .banner-section__logo {
-  max-width: 100px;
-  height: auto;
+  max-width: 403px;
+  max-height: 50px;
   display: block;
 }
 
@@ -142,16 +146,56 @@ width: 100%;
     margin: 0;
 }
 
+.banner-section__menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Mobile vs Desktop banner display */
+.banner-section__mobile-banner {
+  display: block;
+}
+
+.banner-section__desktop-banner {
+  display: block;
+}
+
+.close-icon {
+    display: none;
+}
+
+.close-icon,
+.menu-icon {
+  width: 16px;
+}
+
+.banner-section__menu-toggle.is-open .menu-icon {
+    display: none;
+}
+
+.banner-section__menu-toggle.is-open .close-icon {
+    display: flex;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .banner-section__header {
-    flex-direction: column;
-    padding: 20px;
-    gap: 16px;
+        flex-direction: row;
+        padding: 20px;
+        justify-content: left;
+        box-shadow: 0px 2px 4px 0px #00000026;
   }
 
   .banner-section__logo {
-    max-width: 80px;
+    max-width: 151px;
+    margin: auto;
+  }
+
+  .banner-section__logo-wrap {
+    width: 90%;
   }
 
   .banner-section__text {
@@ -185,24 +229,33 @@ width: 100%;
     font-size: 14px;
     margin-bottom: 16px;
   }
-}
 
-/* Mobile vs Desktop banner display */
-.banner-section__mobile-banner {
-  display: block;
-}
+  .banner-section__message {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 13.42px;
+    letter-spacing: 0px;
+    text-align: center;
+  }
 
-.banner-section__desktop-banner {
-  display: block;
-}
-
-/* Show only text overlay banner on mobile */
-@media (max-width: 768px) {
-  .banner-section__mobile-banner {
+    .banner-section__mobile-banner {
     display: none;
   }
 
   .banner-section__desktop-banner {
     display: block;
+  }
+
+  .banner-section__announcement {
+    display: none;
+  }
+
+  .banner-section__button {
+    display: none;
+  }
+
+  .banner-section__menu-toggle {
+    display: flex;
+    align-items: center;
   }
 }

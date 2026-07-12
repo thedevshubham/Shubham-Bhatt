@@ -1,0 +1,76 @@
+/* ===========================
+   Mobile Menu
+=========================== */
+
+.mobile-menu {
+    position: absolute;
+    top: 62px;
+    left: 0;
+    right: 0;
+
+    background: #F2F2F2;
+    z-index: 100;
+
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: all .3s ease;
+}
+
+.mobile-menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ===========================
+   Content
+=========================== */
+
+.mobile-menu__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 48px 24px;
+}
+
+.mobile-menu__announcement {
+  max-width: 260px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.mobile-menu__announcement p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13.42px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.mobile-menu__button {
+  width: 100%;
+  max-width: 244px;
+}
+
+/* If your button snippet renders an <a> */
+
+.mobile-menu__button a,
+.mobile-menu__button.button {
+  width: 100%;
+}
+
+/* ===========================
+   Desktop
+=========================== */
+
+@media screen and (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+}
