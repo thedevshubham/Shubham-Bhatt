@@ -1,0 +1,44 @@
+{% comment %}
+Usage:
+
+{% render 'color-option-selector',
+    label: color_option.name,
+    options: color_option.values,
+    selected: color_option.selected_value,
+    option_index: 0
+%}
+{% endcomment %}
+
+{% if options != blank %}
+
+<div class="color-option-selector">
+
+    {% if label %}
+        <label class="color-option-selector__label">
+            {{ label }}
+        </label>
+    {% endif %}
+
+    <div class="color-option-selector__list">
+
+        {% for option in options %}
+            <button
+                type="button"
+                class="color-option-selector__item js-product-option{% if option == selected %} is-active{% endif %}"
+                data-option-index="{{ option_index }}"
+                data-value="{{ option }}"
+                >
+                <span class="color-option-selector__indicator" style="background-color: {{ option }};"></span>
+
+                <span class="color-option-selector__text">
+                    {{ option }}
+                </span>
+            </button>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endif %}

@@ -1,96 +1,90 @@
-{% schema %}
-{
-    "name":"Quick View Product",
-    "settings":[]
-}
-{% endschema %}
-
-
 <div class="quick-product">
 
-    <div class="quick-product__image">
+  {% form 'product', product, class: 'quick-view-product-form' %}
 
+    <!-- Row 1 -->
+    <div class="quick-product__header">
+
+      <div class="quick-product__image">
         {{
-            product.featured_image
-            | image_url: width: 800
-            | image_tag
+          product.featured_image
+          | image_url: width: 480
+          | image_tag
         }}
+      </div>
+
+      <div class="quick-product__details">
+
+        <h2 class="quick-product__title">
+          {{ product.title }}
+        </h2>
+
+        <div class="quick-product__price">
+          {{ product.price | money }}
+        </div>
+
+        <div class="quick-product__description">
+          {{ product.description | strip_html | truncate: 180 }}
+        </div>
+
+      </div>
 
     </div>
 
-    <div class="quick-product__info">
+    <!-- Row 2 -->
+    {% assign color_option = product.options_with_values | where: 'name', 'Color' | first %}
+    {% assign color_index = 0 %}
 
-        <h2>{{ product.title }}</h2>
+    {% for option in product.options %}
+    {% if option == 'Color' %}
+        {% assign color_index = forloop.index0 %}
+    {% endif %}
+    {% endfor %}
+{% render 'color-option-selector',
+    label: color_option.name,
+    options: color_option.values,
+    selected: color_option.selected_value,
+    option_index: color_index
+%}
 
-        <div class="price">
+    <!-- Row 3 -->
+    {% assign size_option = product.options_with_values | where: 'name', 'Size' | first %}
+{% assign size_index = 0 %}
 
-            {{ product.price | money }}
+{% for option in product.options %}
+  {% if option == 'Size' %}
+    {% assign size_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
 
-        </div>
 
-        <div class="description">
+{% render 'select',
+    label: size_option.name,
+    options: size_option.values,
+    selected: size_option.selected_value,
+    option_index: size_index
+%}
 
-            {{ product.description | strip_html | truncate: 180 }}
+    <!-- Row 4 -->
+    <div class="quick-product__actions">
 
-        </div>
-
-        {% form 'product', product, class: 'quick-view-product-form' %}
-
-            {% unless product.has_only_default_variant %}
-
-                {% for option in product.options_with_values %}
-
-                    <label>
-
-                        {{ option.name }}
-
-                    </label>
-
-                    <select
-                        name="options[{{ option.name }}]"
-                        class="js-product-option"
-                        data-option-index="{{ forloop.index0 }}"
-                    >
-
-                        {% for value in option.values %}
-
-                            <option
-                                {% if option.selected_value == value %}
-                                    selected
-                                {% endif %}
-                            >
-                                {{ value }}
-                            </option>
-
-                        {% endfor %}
-
-                    </select>
-
-                {% endfor %}
-
-            {% endunless %}
-
-            <input
-                type="hidden"
-                name="id"
-                class="js-selected-variant-id"
-                value="{{ product.selected_or_first_available_variant.id }}"
-            >
-
-            <button
-                type="submit"
-            >
-
-                Add To Cart
-
-            </button>
-
-            <script type="application/json" class="js-product-json">
-                {{ product | json }}
-            </script>
-
-        {% endform %}
-
+      <input
+        type="hidden"
+        name="id"
+        class="js-selected-variant-id"
+        value="{{ product.selected_or_first_available_variant.id }}"
+      >
+        {% render 'button',
+            label: 'Add to Cart',
+            type: 'submit',
+            class: 'quick-product__add'
+        %}
     </div>
+
+    <script type="application/json" class="js-product-json">
+      {{ product | json }}
+    </script>
+
+  {% endform %}
 
 </div>

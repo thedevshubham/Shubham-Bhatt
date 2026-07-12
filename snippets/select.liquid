@@ -1,0 +1,83 @@
+{% comment %}
+  Generic Select Component
+
+  Usage:
+
+  {% render 'select',
+      label: size_option.name,
+      options: size_option.values,
+      selected: size_option.selected_value,
+      option_index: 1
+  %}
+{% endcomment %}
+
+
+{% if options != blank %}
+
+<div class="select-component">
+
+
+    {% if label != blank %}
+        <label class="select-component__label">
+            {{ label }}
+        </label>
+    {% endif %}
+
+
+    <div class="select-component__wrapper js-select">
+
+
+        <!-- Selected value -->
+        <button
+            type="button"
+            class="select-component__trigger js-select-trigger"
+            aria-expanded="false"
+        >
+
+            <span class="select-component__value">
+                {{ selected | default: 'Choose your size' }}
+            </span>
+
+
+            <span class="select-component__icon">
+
+                {% render 'icons',
+                    icon: 'chevron-down',
+                    class: 'select-component__chevron'
+                %}
+
+            </span>
+
+
+        </button>
+
+
+        <!-- Dropdown options -->
+        <div class="select-component__dropdown js-select-dropdown">
+
+
+            {% for option in options %}
+
+                <button
+                    type="button"
+                    class="select-component__option js-product-option{% if option == selected %} is-active{% endif %}"
+                    data-option-index="{{ option_index }}"
+                    data-value="{{ option }}"
+                    >
+
+                    {{ option }}
+
+                </button>
+
+            {% endfor %}
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+{% endif %}

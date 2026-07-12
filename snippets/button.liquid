@@ -1,16 +1,23 @@
 {% comment %}
 Global button component
+
 Usage:
-{% render 'button', label: 'Click me', url: '/path', class: 'custom-class' %}
+{% render 'button',
+  label: 'Click me',
+  type: 'submit',
+  url: '/collections',
+  class: 'custom-class'
+%}
 {% endcomment %}
 
 {% liquid
   assign button_url = url | default: link
+  assign button_type = type | default: 'button'
 %}
 
 {% if label != blank %}
   <button
-    type="button"
+    type="{{ button_type }}"
     class="button{% if class != blank %} {{ class }}{% endif %}"
     {% if button_url != blank %}
       data-button-url="{{ button_url | escape }}"

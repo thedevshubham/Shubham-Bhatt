@@ -24,53 +24,138 @@
 }
 
 .quick-view__dialog {
-
     position: absolute;
-
     top: 50%;
-
     left: 50%;
-
     transform: translate(-50%,-50%);
-
     width: 900px;
-
-    max-width: 95vw;
-
+    max-width: 311px;
+    height: 441px;
     background: white;
-
-    padding: 40px;
+    padding: 25px 20px;
 }
 
-.quick-product{
-
-    display:grid;
-
-    grid-template-columns:350px 1fr;
-
-    gap:40px;
-}
-
-.quick-product img{
-
-    width:100%;
-
-    display:block;
+.quick-view-product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .quick-view__close{
-
     position:absolute;
-
-    right:20px;
-
-    top:20px;
-
+    right: 15.23px;
+    top: 12.7px;
     background:none;
-
     border:none;
-
     cursor:pointer;
+}
 
-    font-size:30px;
+
+/* Quick view product modal */
+.quick-product {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* ---------- Row 1 ---------- */
+
+.quick-product__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.quick-product__image {
+    flex: 0 0 120px;
+}
+
+.quick-product__image img {
+    width: 120px;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.quick-product__details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-product__title {
+    margin: 0 0 20px 0;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 19.2px;
+}
+
+.quick-product__price {
+    font-family: Lustria;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    line-height: 19.2px;
+    margin-bottom: 12px;
+}
+
+.quick-product__description {
+    /* font-family: Jost; */
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 15.4px;
+    letter-spacing: -0.14px;
+}
+
+/* ---------- Row 2 & 3 ---------- */
+
+.quick-product__section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quick-product__label {
+    font-weight: 500;
+}
+
+.quick-product__options {
+    display: flex;
+    gap: 0;
+}
+
+/* Placeholder styling only */
+.quick-product__option,
+.quick-product select {
+    width: 100%;
+    min-height: 56px;
+}
+
+/* ---------- Row 4 ---------- */
+
+.quick-product__actions {
+    display: flex;
+    margin-top: auto;
+}
+
+.quick-product__add {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20.48px;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    justify-content: end;
+    padding: 12px 0 12px 0;
+}
+
+.quick-view__content,
+#shopify-section-quick-view-product,
+.quick-product,
+.quick-view-product-form {
+    height: 100%;
 }
