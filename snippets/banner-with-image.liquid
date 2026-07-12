@@ -1,39 +1,43 @@
 {% comment %}
-Repeatable banner-with-image snippet
-Supports flexible positioning of content over or beside image
+  Repeatable banner-with-image snippet
+  Supports flexible positioning of content over or beside image
 {% endcomment %}
 
-<div class="banner-with-image" data-position="{{ block.settings.position }}" data-position-type="{{ block.settings.position_type }}" data-is-mobile="{{ block.settings.is_mobile }}">
-
-{% if block.settings.image != blank %}
-  <div class="banner-with-image__image-wrap">
-    <img
-      src="{{ block.settings.image | image_url: width: 1600 }}"
-      alt="{{ block.settings.image.alt | default: 'Banner image' }}"
-      class="banner-with-image__image"
-    >
-  </div>
-{% endif %}
-
+<div
+  class="banner-with-image"
+  data-position="{{ block.settings.position }}"
+  data-position-type="{{ block.settings.position_type }}"
+  data-is-mobile="{{ block.settings.is_mobile }}"
+>
+  {% if block.settings.image != blank %}
+    <div class="banner-with-image__image-wrap">
+      <img
+        src="{{ block.settings.image | image_url: width: 1600 }}"
+        alt="{{ block.settings.image.alt | default: 'Banner image' }}"
+        class="banner-with-image__image"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </div>
+  {% endif %}
 
   {% if block.settings.title != blank or block.settings.description != blank or block.settings.cta_label != blank %}
-      <div class="banner-with-image__content-wrap">
-          <div class="banner-with-image__content">
-              {% if block.settings.title != blank %}
-                  <h2 class="banner-with-image__title">{{ block.settings.title }}</h2>
-              {% endif %}
-              
-              {% if block.settings.description != blank %}
-                  <div class="banner-with-image__description">{{ block.settings.description }}</div>
-              {% endif %}
-              
-              {% render 'button',
-                label: block.settings.cta_label,
-                url: block.settings.cta_link,
-                class: 'banner-with-image__cta'
-              %}
-          </div>
+    <div class="banner-with-image__content-wrap">
+      <div class="banner-with-image__content">
+        {% if block.settings.title != blank %}
+          <h2 class="banner-with-image__title">{{ block.settings.title }}</h2>
+        {% endif %}
+
+        {% if block.settings.description != blank %}
+          <div class="banner-with-image__description">{{ block.settings.description }}</div>
+        {% endif %}
+
+        {% render 'button',
+          label: block.settings.cta_label,
+          url: block.settings.cta_link,
+          class: 'banner-with-image__cta'
+        %}
       </div>
+    </div>
   {% endif %}
-  
 </div>

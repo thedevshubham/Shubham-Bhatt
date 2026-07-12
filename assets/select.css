@@ -1,184 +1,116 @@
-.select-component {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
+/* Custom Select Dropdown Component */
 
+.select-component {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
 /* Label */
-
 .select-component__label {
-
-font-weight: 400;
-font-size: 14px;
-line-height: 130%;
-letter-spacing: 0%;
-
-
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3;
+  letter-spacing: 0;
 }
 
-
-/* Wrapper */
-
+/* Selector Wrapper */
 .select-component__wrapper {
-
-    position: relative;
-
+  position: relative;
 }
 
-
-
-/* Main selector button */
-
+/* Main Selector Trigger Button */
 .select-component__trigger {
-
-    width: 100%;
-    height: 41px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 0 0 13px;
-
-    background: #FFFFFF;
-
-    border: 1px solid #1B1B1B;
-
-    cursor: pointer;
-
+  width: 100%;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 13px;
+  background: #ffffff;
+  border: 1px solid #1b1b1b;
+  cursor: pointer;
 }
 
-
-
-/* Selected text */
-
+/* Selected Value Label */
 .select-component__value {
-
-font-weight: 400;
-font-size: 16px;
-line-height: 100%;
-letter-spacing: -2%;
-
-
-    color: #1B1B1B;
-
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #1b1b1b;
 }
 
-
-
-/* Chevron wrapper */
-
+/* Chevron Icon Wrapper */
 .select-component__icon {
-
-    height: 100%;
-    width: 70px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-left: 1px solid #1B1B1B;
-
+  height: 100%;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid #1b1b1b;
 }
 
-
-
+/* Chevron SVG Styling */
 .select-component__chevron {
-
-    width: 12px;
-    height: 6px;
-
-    display: block;
-
-    transition: transform 0.2s ease;
-
+  width: 12px;
+  height: 6px;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
-
-
-/* Rotate arrow when open */
-
-.select-component.is-open 
-.select-component__chevron {
-    display: block;
-    transform: rotate(180deg);
-
-}
-
+/* Rotate Chevron Icon when Select is Open */
+.select-component.is-open .select-component__chevron,
 .select-component__wrapper.is-open .select-component__chevron {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.select-component__wrapper.is-open .js-select-dropdown {
-    display: block;
-}
-/* Dropdown */
-
+/* Dropdown Container */
 .select-component__dropdown {
-
-    display: none;
-
-    position: absolute;
-
-    left: 0;
-    top: 41px;
-
-    width: 100%;
-
-    background: #FFFFFF;
-
-    border: 1px solid #1B1B1B;
-
-    border-top: 0;
-
-    z-index: 10;
-
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 41px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #1b1b1b;
+  border-top: 0;
+  z-index: 10;
 }
 
-
-
-/* Open state */
-
-.select-component.is-open 
-.select-component__dropdown {
-
-    display: block;
-
+/* Display Dropdown when Open */
+.select-component.is-open .select-component__dropdown,
+.select-component__wrapper.is-open .select-component__dropdown {
+  display: block;
 }
 
-
-
-/* Options */
-
+/* Individual Dropdown Options */
 .select-component__option {
-height: 36px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: transparent;
-
-    border: 0;
-
-    cursor: pointer;
-
-    color: #1B1B1B;
-
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    letter-spacing: -2%;
-    text-align: center;
-    vertical-align: middle;
-
-
+  height: 36px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: #1b1b1b;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  vertical-align: middle;
 }
 
-
+/* Option Hover State */
 .select-component__option:hover {
+  background: #000000;
+  color: #ffffff;
+}
 
-    background: #000000;
-    color: #FFFFFF;
+/* Option Selected/Active State */
+.select-component__option.is-active {
+  background: #f5f5f5;
+  font-weight: 500;
 }

@@ -28,15 +28,8 @@
 
     {% comment %} Stylings here {% endcomment %}
     <link rel="stylesheet" href="{{ 'main.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'banner.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'banner-with-image.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'product-grid.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'product-card.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'quick-view.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'color-option-selector.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'select.css' | asset_url }}" />
-    <link rel="stylesheet" href="{{ 'mobile-menu.css' | asset_url }}" />
 
+    {% comment %} Scripts here {% endcomment %}
     <script src="{{ 'main.js' | asset_url }}" defer></script>
 
     {{ content_for_header }}
@@ -56,8 +49,8 @@
       </main>
     </div>
 
-    {{ 'quick-view.js' | asset_url | script_tag }}
 
+    {% comment %} Here picking the gift item's variant id from the shop metafield {% endcomment %}
     <script>
         window.ShopifyConfig = window.ShopifyConfig || {};
         window.ShopifyConfig.giftWithPurchaseVariant =

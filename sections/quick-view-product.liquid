@@ -1,20 +1,12 @@
 <div class="quick-product">
-
   {% form 'product', product, class: 'quick-view-product-form' %}
-
     <!-- Row 1 -->
     <div class="quick-product__header">
-
       <div class="quick-product__image">
-        {{
-          product.featured_image
-          | image_url: width: 480
-          | image_tag
-        }}
+        {{ product.featured_image | image_url: width: 480 | image_tag: loading: 'lazy' }}
       </div>
 
       <div class="quick-product__details">
-
         <h2 class="quick-product__title">
           {{ product.title }}
         </h2>
@@ -26,9 +18,7 @@
         <div class="quick-product__description">
           {{ product.description | strip_html | truncate: 180 }}
         </div>
-
       </div>
-
     </div>
 
     <!-- Row 2 -->
@@ -36,55 +26,47 @@
     {% assign color_index = 0 %}
 
     {% for option in product.options %}
-    {% if option == 'Color' %}
+      {% if option == 'Color' %}
         {% assign color_index = forloop.index0 %}
-    {% endif %}
+      {% endif %}
     {% endfor %}
-{% render 'color-option-selector',
-    label: color_option.name,
-    options: color_option.values,
-    selected: color_option.selected_value,
-    option_index: color_index
-%}
+    {% render 'color-option-selector',
+      label: color_option.name,
+      options: color_option.values,
+      selected: color_option.selected_value,
+      option_index: color_index
+    %}
 
     <!-- Row 3 -->
     {% assign size_option = product.options_with_values | where: 'name', 'Size' | first %}
-{% assign size_index = 0 %}
+    {% assign size_index = 0 %}
 
-{% for option in product.options %}
-  {% if option == 'Size' %}
-    {% assign size_index = forloop.index0 %}
-  {% endif %}
-{% endfor %}
+    {% for option in product.options %}
+      {% if option == 'Size' %}
+        {% assign size_index = forloop.index0 %}
+      {% endif %}
+    {% endfor %}
 
-
-{% render 'select',
-    label: size_option.name,
-    options: size_option.values,
-    selected: size_option.selected_value,
-    option_index: size_index
-%}
+    {% render 'select',
+      label: size_option.name,
+      options: size_option.values,
+      selected: size_option.selected_value,
+      option_index: size_index
+    %}
 
     <!-- Row 4 -->
     <div class="quick-product__actions">
-
       <input
         type="hidden"
         name="id"
         class="js-selected-variant-id"
         value="{{ product.selected_or_first_available_variant.id }}"
       >
-        {% render 'button',
-            label: 'Add to Cart',
-            type: 'submit',
-            class: 'quick-product__add'
-        %}
+      {% render 'button', label: 'Add to Cart', type: 'submit', class: 'quick-product__add' %}
     </div>
 
     <script type="application/json" class="js-product-json">
       {{ product | json }}
     </script>
-
   {% endform %}
-
 </div>

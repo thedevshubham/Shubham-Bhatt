@@ -1,9 +1,14 @@
+{{ 'quick-view.css' | asset_url | stylesheet_tag }}
+{{ 'select.css' | asset_url | stylesheet_tag }}
+{{ 'color-option-selector.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'quick-view.js' | asset_url }}" defer="defer"></script>
+
 <div id="QuickViewModal" class="quick-view">
-    <div class="quick-view__overlay"></div>
-    <div class="quick-view__dialog">
-        <button class="quick-view__close">
-            {% render 'icons', icon: 'close-icon', class: 'close_icon' %}
-        </button>
-        <div class="quick-view__content"></div>
-    </div>
+  <div class="quick-view__overlay"></div>
+  <div class="quick-view__dialog">
+    <button class="quick-view__close">
+      {% render 'icons', icon: 'close-icon', class: 'close_icon' %}
+    </button>
+    <div class="quick-view__content"></div>
+  </div>
 </div>
