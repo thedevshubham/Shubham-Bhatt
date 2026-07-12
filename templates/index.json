@@ -37,11 +37,38 @@
             "position_type": "side",
             "is_mobile": false
           }
+        },
+        "banner_with_image_TPhK4N": {
+          "type": "banner-with-image",
+          "settings": {
+            "title": "The Gift Guide",
+            "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination.</p>",
+            "cta_label": "",
+            "cta_link": "",
+            "position": "center",
+            "position_type": "overlay",
+            "is_mobile": true
+          }
+        },
+        "banner_with_image_gHenRF": {
+          "type": "banner-with-image",
+          "settings": {
+            "image": "shopify://shop_images/mobile-frame.jpg",
+            "title": "",
+            "description": "",
+            "cta_label": "Shop Now",
+            "cta_link": "",
+            "position": "center",
+            "position_type": "overlay",
+            "is_mobile": true
+          }
         }
       },
       "block_order": [
         "banner_with_image_WDRCBJ",
-        "banner_with_image_itaPtk"
+        "banner_with_image_itaPtk",
+        "banner_with_image_TPhK4N",
+        "banner_with_image_gHenRF"
       ],
       "name": "Banner",
       "settings": {
@@ -49,7 +76,7 @@
         "announcement_text": "<p>Discover our latest arrivals and curated essentials.</p>",
         "button_1": "Choose gift",
         "button_1_link": "shopify://collections",
-        "message_text": "<p>SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL</p>",
+        "message_text": "<p>SUSTAINABLE, ETHICALLY MADE ACTIVEWEAR</p>",
         "button_2": "",
         "button_2_link": ""
       }
