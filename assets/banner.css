@@ -1,3 +1,5 @@
+/* Banner Component Stylesheet */
+
 .banner-section {
   position: relative;
 }
@@ -16,8 +18,7 @@
   padding: 10px;
   background-color: #f5f5f5;
   gap: 24px;
-
-width: 100%;
+  width: 100%;
 }
 
 .banner-section__logo-wrap {
@@ -31,11 +32,7 @@ width: 100%;
 }
 
 .banner-section__button {
-    width: 207px;
-}
-
-.banner-section__button:hover {
-  /* background: #333333; */
+  width: 207px;
 }
 
 .banner-section__main {
@@ -69,7 +66,6 @@ width: 100%;
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0) 100%); */
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -78,14 +74,14 @@ width: 100%;
 }
 
 .banner-section__hero-content {
-    max-width: 500px;
-    background: #FFF;
-    bottom: 0;
-    position: absolute;
-    left: 0;
-    padding-left: 67px;
-    padding-bottom: 51px;
-    padding-top: 51px;
+  max-width: 500px;
+  background: #ffffff;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  padding-left: 67px;
+  padding-bottom: 51px;
+  padding-top: 51px;
 }
 
 .banner-section__hero-heading {
@@ -116,11 +112,6 @@ width: 100%;
   gap: 8px;
 }
 
-.banner-section__hero-button:hover {
-  /* background: #333333;
-  transform: translateX(4px); */
-}
-
 .banner-section__hero-placeholder {
   width: 100%;
   min-height: 400px;
@@ -133,28 +124,28 @@ width: 100%;
 }
 
 .banner-section__message {
-    background: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    line-height: 14px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  line-height: 14px;
 }
 
 .banner-section__message > p {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .banner-section__menu-toggle {
-    display: none;
-    background: transparent;
-    border: 0;
-    padding: 0;
-    cursor: pointer;
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
-/* Mobile vs Desktop banner display */
+/* Mobile vs Desktop banner display toggle flags */
 .banner-section__mobile-banner {
   display: block;
 }
@@ -164,7 +155,7 @@ width: 100%;
 }
 
 .close-icon {
-    display: none;
+  display: none;
 }
 
 .close-icon,
@@ -173,20 +164,20 @@ width: 100%;
 }
 
 .banner-section__menu-toggle.is-open .menu-icon {
-    display: none;
+  display: none;
 }
 
 .banner-section__menu-toggle.is-open .close-icon {
-    display: flex;
+  display: flex;
 }
 
-/* Responsive design */
+/* Responsive Styles */
 @media (max-width: 768px) {
   .banner-section__header {
-        flex-direction: row;
-        padding: 20px;
-        justify-content: left;
-        box-shadow: 0px 2px 4px 0px #00000026;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: left;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   }
 
   .banner-section__logo {
@@ -233,12 +224,12 @@ width: 100%;
   .banner-section__message {
     font-weight: 400;
     font-size: 14px;
-    line-height: 13.42px;
+    line-height: 13px;
     letter-spacing: 0px;
     text-align: center;
   }
 
-    .banner-section__mobile-banner {
+  .banner-section__mobile-banner {
     display: none;
   }
 

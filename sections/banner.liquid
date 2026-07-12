@@ -139,6 +139,10 @@
 }
 {% endschema %}
 
+{{ 'banner.css' | asset_url | stylesheet_tag }}
+{{ 'banner-with-image.css' | asset_url | stylesheet_tag }}
+{{ 'mobile-menu.css' | asset_url | stylesheet_tag }}
+
 <div class="banner-section">
   <div class="banner-section__header">
     <button
@@ -146,12 +150,12 @@
       class="banner-section__menu-toggle"
       aria-label="Open menu"
     >
-        <span class="menu-icon">
-            {% render 'icons', icon: 'menu' %}
-        </span>
+      <span class="menu-icon">
+        {% render 'icons', icon: 'menu' %}
+      </span>
 
       <span class="close-icon">
-          {% render 'icons', icon: 'mobile-menu-close' %}
+        {% render 'icons', icon: 'mobile-menu-close' %}
       </span>
     </button>
 
@@ -197,4 +201,3 @@
 </div>
 
 {% render 'mobile-menu', section: section %}
-

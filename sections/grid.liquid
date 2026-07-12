@@ -31,6 +31,9 @@
 }
 {% endschema %}
 
+{{ 'product-grid.css' | asset_url | stylesheet_tag }}
+{{ 'product-card.css' | asset_url | stylesheet_tag }}
+
 <section class="product-grid">
   {% if section.settings.title != blank %}
     <h2 class="product-grid__title">
@@ -43,9 +46,7 @@
       {% assign product = block.settings.product %}
 
       {% if product %}
-        {% render 'product-card',
-          product: product
-        %}
+        {% render 'product-card', product: product %}
       {% endif %}
     {% endfor %}
 

@@ -1,28 +1,42 @@
 {%- capture icon_class -%} {{ class }}{%- endcapture -%}
 
-    {% case icon %}
-        {% when 'close-icon' %}
-            <svg class="{{icon_class}}" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.24219 4.24279L12.7275 12.7281" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-                <path d="M4.24219 12.7278L12.7275 4.24249" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
-            </svg>
-        {% when 'chevron-down' %}
-            <svg class="{{icon_class}}" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.06055 1.06067L7.06055 7.06067L13.0605 1.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-        {% when 'chevron-up' %}
-            <svg class="{{icon_class}}" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.0605 7.06067L7.06055 1.06067L1.06055 7.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
-            </svg>
-        {% when 'menu' %}
-            <svg class="{{icon_class}}" width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 6H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 1H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 11H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        {% when 'mobile-menu-close' %}
-            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 13.9994L13.7279 1.27147" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M1 1L13.7279 13.7279" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-    {% endcase %}
+{% case icon %}
+  {% when 'close-icon' %}
+    <svg
+      class="{{icon_class}}"
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M4.24219 4.24279L12.7275 12.7281" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+      <path d="M4.24219 12.7278L12.7275 4.24249" stroke="black" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"/>
+    </svg>
+  {% when 'chevron-down' %}
+    <svg class="{{icon_class}}" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1.06055 1.06067L7.06055 7.06067L13.0605 1.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
+    </svg>
+  {% when 'chevron-up' %}
+    <svg class="{{icon_class}}" width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.0605 7.06067L7.06055 1.06067L1.06055 7.06067" stroke="black" stroke-width="1.5" stroke-linecap="square"/>
+    </svg>
+  {% when 'menu' %}
+    <svg
+      class="{{icon_class}}"
+      width="20"
+      height="12"
+      viewBox="0 0 20 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M1 6H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1 1H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1 11H19" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  {% when 'mobile-menu-close' %}
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 13.9994L13.7279 1.27147" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M1 1L13.7279 13.7279" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+{% endcase %}
