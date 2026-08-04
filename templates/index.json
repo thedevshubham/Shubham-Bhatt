@@ -30,7 +30,7 @@
           "settings": {
             "image": "shopify://shop_images/banner2.jpg",
             "title": "The Gift Guide",
-            "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season.</p>",
+            "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday seson.</p>",
             "cta_label": "Shop Now",
             "cta_link": "shopify://collections",
             "position": "left",
